@@ -9,7 +9,7 @@ import mavendemo.entities.Employee;
 
 
 // Responsibility is any DB interactions
-public class EmployeeRepository 
+public class EmployeeRepository{
 	
 	public static List<Employee> employees = new ArrayList<>();
 	
