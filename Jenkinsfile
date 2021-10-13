@@ -7,13 +7,13 @@
         stage('Clean') {
             steps {
                 echo 'Cleaning..'
-                sh 'mvn -B -DskipTests clean'
+                bat 'mvn -B -DskipTests clean'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'mvn test'
+                bat 'mvn test'
             }
              post {
                 always {
