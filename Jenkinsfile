@@ -14,17 +14,13 @@
                 echo 'Cleaning..'
                 bat 'mvn -B -DskipTests clean'
             }
-        
+        }
       post {
-       // only triggered when blue or green sign
-       success {
-           slackSend message : 'Cleaned Suucessfully'
-       }
-       // triggered when red sign
-       failure {
-           slackSend message : 'Cleaning failed'
-       }
-      }
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+    }
+      
         stage('Test') {
             steps {
                 echo 'Testing..'
