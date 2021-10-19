@@ -21,7 +21,7 @@
        
             }
           failure {
-           slackSend message : 'Cleaning failed
+           slackSend message : 'Cleaning failed'
         }
         }
         }
