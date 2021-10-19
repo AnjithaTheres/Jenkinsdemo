@@ -19,7 +19,7 @@
           success{
              emailext body: 'Cleaned',
               subject : 'CLean'
-             to : 'anjithatheresjc@gmail.com'
+       
             }
         }
         }
