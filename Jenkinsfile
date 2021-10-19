@@ -14,7 +14,7 @@
                 echo 'Cleaning..'
                 bat 'mvn -B -DskipTests clean'
             }
-        }
+        
       post {
        // only triggered when blue or green sign
        success {
@@ -24,6 +24,7 @@
        failure {
            slackSend message : 'Cleaning failed'
        }
+      }
         stage('Test') {
             steps {
                 echo 'Testing..'
