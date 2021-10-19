@@ -26,5 +26,10 @@
                 echo 'mvn package'
             }
         }
+      post {
+            success {
+                slackSend "Packaged successfully - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+            }
+        }
     }
 }
