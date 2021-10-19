@@ -18,7 +18,8 @@
          post{ 
           success{
              emailext body: 'Cleaned',
-              subject : 'CLean'
+              subject : 'CLean',
+               to : 'anjithatheresjc@gmail.com'
        
             }
         }
