@@ -13,7 +13,9 @@
             steps {
                 echo 'Cleaning..'
                 bat 'mvn -B -DskipTests clean'
-             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+             emailext body: 'Cleaned',
+              subject : 'CLean'
+             to : 'anjithatheresjc@gmail.com'
             }
         }
       
