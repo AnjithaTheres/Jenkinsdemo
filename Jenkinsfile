@@ -13,13 +13,10 @@
             steps {
                 echo 'Cleaning..'
                 bat 'mvn -B -DskipTests clean'
+             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
             }
         }
-      post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-    }
+      
       
         stage('Test') {
             steps {
