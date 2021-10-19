@@ -20,6 +20,9 @@
              slackSend message : 'Successfully cleaned'
        
             }
+          failure {
+           slackSend message : 'Cleaning failed
+        }
         }
         }
       
