@@ -13,6 +13,8 @@
             steps {
                 echo 'Cleaning..'
                 bat 'mvn -B -DskipTests clean'
+            }
+         steps{
              emailext body: 'Cleaned',
               subject : 'CLean'
              to : 'anjithatheresjc@gmail.com'
